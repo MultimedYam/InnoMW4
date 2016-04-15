@@ -11,7 +11,21 @@ angular.module('starter')
                     template: 'Please check your credentials!'
                 });
             });
-        }
+        };
+
+        $scope.logout = function(){
+            $ionicLoading.show({template:'Logging out....'});
+            $localstorage.set('loggin_state', '');
+
+            $timeout(function () {
+                $ionicLoading.hide();
+                $ionicHistory.clearCache();
+                $ionicHistory.clearHistory();
+                $ionicHistory.nextViewOptions({ disableBack: true, historyRoot: true });
+                $state.go('login');
+            }, 30);
+
+        };
     })
 
 

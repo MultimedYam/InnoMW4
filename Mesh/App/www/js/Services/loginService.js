@@ -19,7 +19,13 @@ angular.module('starter')
                     return promise;
                 }
                 return promise;
+            },
+
+            logoutUser: function(){
+                return true;
+
             }
+
         }
     })
 ;
