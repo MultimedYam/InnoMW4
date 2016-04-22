@@ -56,6 +56,12 @@ angular.module('app.routes', [])
                 }
             })
 
+            .state('register', {
+                url: '/register',
+                templateUrl: 'templates/register.html',
+                controller: 'registerCtrl'
+            })
+
             .state('login', {
                 url: '/login',
                 templateUrl: 'templates/login.html',
@@ -63,7 +69,7 @@ angular.module('app.routes', [])
             });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('login');
+        $urlRouterProvider.otherwise('register');
 
     })
 ;
