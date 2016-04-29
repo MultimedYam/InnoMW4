@@ -3,6 +3,8 @@ angular.module('starter')
         $scope.data = {};
 
         $scope.login = function() {
+          
+            loginService.onLogin();
             loginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
                 $state.go('tab.dash');
             }).error(function(data) {
