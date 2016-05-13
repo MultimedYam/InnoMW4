@@ -1,13 +1,8 @@
 angular.module('app.routes', [])
 
-    .config(function ($stateProvider, $urlRouterProvider) {
-
-        // Ionic uses AngularUI Router which uses the concept of states
-        // Learn more here: https://github.com/angular-ui/ui-router
-        // Set up the various states which the app can be in.
-        // Each state's controller can be found in controllers.js
+    .config(function ($ionicConfigProvider,$stateProvider, $urlRouterProvider) {
+        $ionicConfigProvider.tabs.position('bottom');
         $stateProvider
-
         // setup an abstract state for the tabs directive
             .state('tab', {
                 url: '/tab',
@@ -16,46 +11,37 @@ angular.module('app.routes', [])
             })
 
             // Each tab has its own nav history stack:
-
-            .state('tab.dash', {
-                url: '/dash',
+            .state('tab.mesh', {
+                url: '/mesh',
                 views: {
-                    'tab-dash': {
-                        templateUrl: 'templates/tab-dash.html',
-                        controller: 'DashCtrl'
+                    'tab-mesh': {
+                        templateUrl: 'templates/tab-mesh.html',
+                        controller: 'meshCtrl'
                     }
                 }
             })
 
-            .state('tab.chats', {
-                url: '/chats',
+            .state('tab.search', {
+                url: '/search',
                 views: {
-                    'tab-chats': {
-                        templateUrl: 'templates/tab-chats.html',
-                        controller: 'ChatsCtrl'
-                    }
-                }
-            })
-            .state('tab.chat-detail', {
-                url: '/chats/:chatId',
-                views: {
-                    'tab-chats': {
-                        templateUrl: 'templates/chat-detail.html',
-                        controller: 'ChatDetailCtrl'
+                    'tab-search': {
+                        templateUrl: 'templates/tab-search.html',
+                        controller: 'searchCtrl'
                     }
                 }
             })
 
-            .state('tab.account', {
-                url: '/account',
+            .state('tab.profilez', {
+                url: '/profile',
                 views: {
-                    'tab-account': {
-                        templateUrl: 'templates/tab-account.html',
-                        controller: 'accountCtrl'
+                    'tab-profile': {
+                        templateUrl: 'templates/tab-profile.html',
+                        controller: 'profileCtrl'
                     }
                 }
             })
 
+            //new views
             .state('register', {
                 url: '/register',
                 templateUrl: 'templates/register.html',
@@ -69,7 +55,7 @@ angular.module('app.routes', [])
             });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('register');
+        $urlRouterProvider.otherwise('login');
 
     })
 ;
