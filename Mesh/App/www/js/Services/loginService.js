@@ -6,7 +6,7 @@ angular.module('starter')
                 var deferred = $q.defer();
                 var promise = deferred.promise;
 
-                if (name == 'user' && pw == 'secret') {
+                if (name == 'user' && pw == 'pass') {
                     deferred.resolve('Welcome ' + name + '!');
                 } else {
                     deferred.reject('Wrong credentials.');
@@ -55,7 +55,7 @@ angular.module('starter')
 
                 function processOpen(){
                     console.log('server connecting....');
-                    sendMessage('je moeder');
+                    sendMessage('Establishing server connection...');
 
                 }
                 function sendMessage(message){
