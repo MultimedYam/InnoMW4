@@ -1,15 +1,15 @@
 angular.module('starter')
-    .controller('profileCtrl', function ($scope,$state) {
+    .controller('profileCtrl', function ($scope, $state) {
         $scope.settings = {
             enableFriends: false,
             shoarma: true
         };
 
-        $scope.logout = function(){
-            $state.go('login');
+        $scope.logout = function () {
+            socket.onclose();
+            state.go('login');
         };
     })
-
 
 
 ;

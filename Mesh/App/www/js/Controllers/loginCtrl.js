@@ -2,9 +2,9 @@ angular.module('starter')
     .controller('loginCtrl', function($scope, loginService, $ionicPopup, $state) {
         $scope.data = {};
 
+        var websocket = new WebSocket("ws://145.93.145.49:8080/MeshServer/serverConnection");
         $scope.login = function() {
-          
-            loginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
+            loginService.loginUser($scope.data.username, $scope.data.password,websocket).success(function(data) {
                 $state.go('tab.mesh');
             }).error(function(data) {
                 var alertPopup = $ionicPopup.alert({
@@ -15,6 +15,7 @@ angular.module('starter')
         };
 
         $scope.logout = function(){
+            
             $ionicLoading.show({template:'Logging out....'});
             $localstorage.set('loggin_state', '');
 
