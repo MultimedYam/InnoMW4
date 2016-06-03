@@ -1,10 +1,14 @@
 angular.module('starter')
     .controller('loginCtrl', function($scope, loginService, $ionicPopup, $state) {
         $scope.data = {};
+        $scope.user ={};
 
-        var websocket = new WebSocket("ws://145.93.145.49:8080/MeshServer/serverConnection");
+        var websocket = new WebSocket("ws://145.93.144.250:8080/MeshServer/serverConnection");
+        // var websocket = new WebSocket("ws://localhost/MeshServer/serverConnection");
         $scope.login = function() {
-            loginService.loginUser($scope.data.username, $scope.data.password,websocket).success(function(data) {
+            console.log($scope.user.username);
+            console.log($scope.user.password);
+            loginService.loginUser($scope.user.username, $scope.user.password,websocket).success(function(data) {
                 $state.go('tab.mesh');
             }).error(function(data) {
                 var alertPopup = $ionicPopup.alert({

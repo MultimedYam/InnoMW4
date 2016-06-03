@@ -1,14 +1,46 @@
 <ion-view view-title="Login" name="login-view">
-  <ion-content class="padding">
-      <div class="list list-inset">
-          <label class="item item-input">
-              <input type="text" placeholder="Username" ng-model="data.username">
-          </label>
-          <label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="data.password">
-          </label>
-      </div>
-      <button class="button button-block button-royal" ng-click="login()">Login</button>
-      <a href="#/register">Register!</a>
-  </ion-content>
+    <ion-content class="padding">
+        <form name="signinForm"  ng-submit="signIn(signinForm)">
+            <script id="templates/form-errors.html" type="text/ng-template">
+                <div class="form-error" ng-message="required">This field is required.</div>
+                <div class="form-error" ng-message="username">This username is required.</div>
+                <div class="form-error" ng-message="minlength">This field is must be at least 5 characters.</div>
+                <div class="form-error" ng-message="maxlength">This field is must be less than  characters</div>
+            </script>
+
+            <label class="item item-input"
+                   ng-class="{ 'has-error' : signinForm.username.$invalid}">
+                <span class="input-label">Username</span>
+                <input type="text"
+                       name="username"
+                       ng-model="user.username"
+                       ng-minlength="10"
+                       ng-maxlength="10"
+                       required>
+            </label>
+            <div class="form-errors"
+                 ng-show="signinForm.username.$error && signinForm.$submitted"
+                 ng-messages="signinForm.username.$error"
+                 ng-messages-include="templates/form-errors.html">
+            </div>
+            <label class="item item-input"
+                   ng-class="{ 'has-error-lr' : signinForm.password.$invalid  && signinForm.$submitted, 'valid-lr' : signinForm.password.$valid  && signinForm.$submitted}">
+                <span class="input-label">Password</span>
+                <input type="password"
+                       name="password"
+                       ng-model="user.password"
+                       ng-minlength="8"
+                       ng-maxlength="25"
+                       required>
+            </label>
+            <div class="form-errors"
+                 ng-show="signinForm.password.$error && signinForm.$submitted"
+                 ng-messages="signinForm.password.$error"
+                 ng-messages-include="templates/form-errors.html">
+            </div>
+
+            <button class="button button-block button-royal" ng-click="login()">Login</button>
+            <a href="#/register">Register!</a>
+        </form>
+    </ion-content>
 </ion-view>

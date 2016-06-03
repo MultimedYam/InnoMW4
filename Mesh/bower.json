@@ -1,0 +1,22 @@
+{
+  "name": "Mesh",
+  "homepage": "https://github.com/MultimedYam/InnoMW4",
+  "authors": [
+    "Robert Roubos <robertroubos9@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-messages": "^1.5.5",
+    "angular-socket-io": "^0.7.0"
+  }
+}
