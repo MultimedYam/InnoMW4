@@ -1,5 +1,4 @@
-angular.module('starter')
-    .service('loginService', function ($q) {
+myApp.service('loginService', function ($q) {
         return {
             loginUser: function (username, password, socket) {
 

@@ -1,5 +1,4 @@
-angular.module('starter')
-    .controller('profileCtrl', function ($scope, $state) {
+myApp.controller('profileCtrl', function ($scope,$state) {
         $scope.settings = {
             enableFriends: false,
             shoarma: true
