@@ -1,9 +1,6 @@
 /* Empty. Add your own CSS if you like */
 
-.body
-{
-	background-color: #A6C4FF;
-}
+/*This is ng-animate*/
 
 .slide{
 	transition:0.5s linear all;

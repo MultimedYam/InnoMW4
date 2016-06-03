@@ -53,10 +53,16 @@ angular.module('app.routes', [])
                 url: '/login',
                 templateUrl: 'templates/login.html',
                 controller: 'loginCtrl'
+            })
+            
+            .state('home', {
+                url: '/home',
+                templateUrl: 'templates/home.html',
+                controller: 'homeCtrl'
             });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('login');
+        $urlRouterProvider.otherwise('home');
 
     })
 ;

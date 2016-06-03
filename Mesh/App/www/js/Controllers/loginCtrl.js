@@ -1,5 +1,6 @@
-angular.module('starter')
-    .controller('loginCtrl', function($scope, loginService, $ionicPopup, $state, ionicMaterialInk) {
+myApp.controller('loginCtrl', function($scope, loginService, $ionicPopup, $state, ionicMaterialInk) {
+      
+
         
         ionicMaterialInk.displayEffect();
         

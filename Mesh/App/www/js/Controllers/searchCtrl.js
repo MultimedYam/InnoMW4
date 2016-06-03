@@ -1,6 +1,5 @@
-angular.module('starter')
-    .controller('searchCtrl', function ($scope) {
-    })
+myApp.controller('searchCtrl', function ($scope) {
+    
+    
 
-
-;
+});//controller

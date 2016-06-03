@@ -1,5 +1,7 @@
-angular.module('starter')
-    .controller('registerCtrl', function($scope, registerService, $ionicPopup, $state) {
+myApp.controller('registerCtrl', function($scope, registerService, $ionicPopup, $state) {
+        
+
+        
         $scope.data = {};
 
         $scope.register = function() {

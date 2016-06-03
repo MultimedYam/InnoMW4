@@ -1,7 +1,7 @@
 {
-  "name": "simple-login",
+  "name": "mesh-app-2.0",
   "version": "1.1.1",
-  "description": "simple-login: An Ionic project",
+  "description": "Mesh-App-2.0: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",
@@ -21,7 +21,16 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-crosswalk-webview"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [
+    "ios",
+    {
+      "platform": "ios",
+      "version": "",
+      "locator": "ios"
+    },
+    "android"
+  ]
 }

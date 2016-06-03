@@ -1,5 +1,4 @@
-angular.module('starter')
-    .service('registerService', function ($q) {
+myApp.service('registerService', function ($q) {
         return {
             registerUser: function (email, name, pw) {
                 var deferred = $q.defer();
