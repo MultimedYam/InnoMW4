@@ -2,6 +2,7 @@ angular.module('app.routes', [])
 
     .config(function ($ionicConfigProvider,$stateProvider, $urlRouterProvider) {
         $ionicConfigProvider.tabs.position('bottom');
+        
         $stateProvider
         // setup an abstract state for the tabs directive
             .state('tab', {
@@ -31,7 +32,7 @@ angular.module('app.routes', [])
                 }
             })
 
-            .state('tab.profilez', {
+            .state('tab.profile', {
                 url: '/profile',
                 views: {
                     'tab-profile': {

@@ -1,0 +1,28 @@
+.content-block{
+    background-color: white;
+}
+.custom-transparent-header{
+  /*width: 100%;*/
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0; 
+  
+}
+.avatar-block{
+    padding:10%;
+    background: linear-gradient(to bottom right, #85D8CE, #085078); 
+    /*z-index: 10;*/
+    
+}
+.button-avatar{
+    border: 0px !important;
+}
+.buttons-login-block{
+    width: 75%;
+    margin: auto;
+    margin-top:7%;
+}
+.user-login-block{
+    margin-top:20%;
+}

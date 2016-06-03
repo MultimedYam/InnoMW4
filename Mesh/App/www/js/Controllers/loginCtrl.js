@@ -1,8 +1,13 @@
 angular.module('starter')
-    .controller('loginCtrl', function($scope, loginService, $ionicPopup, $state) {
+    .controller('loginCtrl', function($scope, loginService, $ionicPopup, $state, ionicMaterialInk) {
+        
+        ionicMaterialInk.displayEffect();
+        
         $scope.data = {};
 
         $scope.login = function() {
+            
+           
           
             loginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
                 $state.go('tab.mesh');
