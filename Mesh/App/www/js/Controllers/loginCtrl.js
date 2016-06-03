@@ -1,14 +1,12 @@
 myApp.controller('loginCtrl', function ($scope, loginService, $ionicPopup, $state, ionicMaterialInk) {
     ionicMaterialInk.displayEffect();
 
-    $scope.data = {};
     $scope.user = {};
 
     var websocket = new WebSocket("ws://145.93.144.250:8080/MeshServer/serverConnection");
     // var websocket = new WebSocket("ws://localhost/MeshServer/serverConnection");
     $scope.login = function () {
-        console.log($scope.user.username);
-        console.log($scope.user.password);
+        console.log($scope.user);
         loginService.loginUser($scope.user.username, $scope.user.password, websocket).success(function (data) {
             $state.go('tab.mesh');
         }).error(function (data) {
