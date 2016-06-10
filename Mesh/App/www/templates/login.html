@@ -9,8 +9,11 @@
         <div class="avatar-block">
                 <img src="img/avatar.png" alt="" width="50%" class="avatar-img">
         </div>
+
         <div class="content-block">
+
             <div class="buttons-login-block">
+
                 <form name="signinForm" ng-submit="signIn(signinForm)">
                     <script id="templates/form-errors.html" type="text/ng-template">
                         <div class="form-error" ng-message="required">This field is required.</div>
@@ -18,10 +21,11 @@
                         <div class="form-error" ng-message="minlength">This field is must be at least 5 characters.</div>
                         <div class="form-error" ng-message="maxlength">This field is must be less than characters</div>
                     </script>
-                    <label class="item item-input"
+                    <div class="list">
+                    <label class="item item-input item-floating-label"
                            ng-class="{ 'has-error-lr' : registerForm.email.$invalid }">
                         <span class="input-label">Email</span>
-                        <input type="email"
+                        <input placeholder="Email" type="email"
                                name="email"
                                ng-model="user.username"
                                required>
@@ -31,21 +35,26 @@
                          ng-messages="signinForm.username.$error"
                          ng-messages-include="templates/form-errors.html">
                     </div>
-                    <label class="item item-input"
+                    <label class="item item-input  item-floating-label"
                            ng-class="{ 'has-error-lr' : registerForm.password.$invalid  }">
                         <span class="input-label">Password</span>
-                        <input type="password"
+                        <input placeholder="Password" type="password"
                                name="password"
                                ng-model="user.password"
                                ng-minlength="8"
                                required>
                     </label>
+                  </div>
+
+
                     <div class="user-login-block">
-                        <button class="button button-calm  button-raised round-button" ng-click="login()">
+                        <button class="button button-calm  button-raised round-button" ng-click="login()" ui-sref="tab.mesh">
                             Log in
                         </button>
                     </div>
+
                 </form>
+
             </div>
         </div>
     </ion-content>

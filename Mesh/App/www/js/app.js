@@ -6,9 +6,9 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-var myApp = angular.module('starter', ['ionic','app.routes','ionic-material'])
+var myApp = angular.module('starter', ['ionic', 'app.routes','ionic-material']);
 
-    .run(function ($ionicPlatform) {
+    myApp.run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
@@ -20,6 +20,4 @@ var myApp = angular.module('starter', ['ionic','app.routes','ionic-material'])
                 StatusBar.styleDefault();
             }
         });
-    })
-
-;
+      });

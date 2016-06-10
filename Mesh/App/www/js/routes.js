@@ -2,7 +2,7 @@ angular.module('app.routes', [])
 
     .config(function ($ionicConfigProvider,$stateProvider, $urlRouterProvider) {
         $ionicConfigProvider.tabs.position('bottom');
-        
+
         $stateProvider
         // setup an abstract state for the tabs directive
             .state('tab', {
@@ -52,9 +52,12 @@ angular.module('app.routes', [])
             .state('login', {
                 url: '/login',
                 templateUrl: 'templates/login.html',
-                controller: 'loginCtrl'
+                controller: 'loginCtrl',
+                data: {
+                  css: 'css/login.style.css'
+                }
             })
-            
+
             .state('home', {
                 url: '/home',
                 templateUrl: 'templates/home.html',
@@ -66,4 +69,3 @@ angular.module('app.routes', [])
 
     })
 ;
-

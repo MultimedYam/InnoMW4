@@ -1,8 +1,8 @@
 .background-color{
-   background: linear-gradient(to bottom right, #85D8CE, #085078); 
+   background: linear-gradient(to bottom right, #85D8CE, #085078);
    /*background: linear-gradient(to bottom right, #16222A, #3A6073); */
 
-    
+
 }
 
 .beeld-logo-block{
@@ -16,44 +16,35 @@
 #text-logo{
     display: block;
     margin: auto;
-  
+
 }
 
 .buttons-block{
     margin:auto;
-    margin-top:20%;
+    margin-top:35%;
     width: 75%;
-    
+
 }
 
-.signup-block{
+.register-block{
     margin-top:5%;
-   
+
 }
 
 .round-button{
     width: 100%;
     border-radius:25px !important;
- 
+
 }
 
-.login-block{
-    margin-top:10%;
-    text-align: center;
-    letter-spacing: 1px;
-}
+
 .text-button{
     margin:0 auto;
     color: white !important;
-   
-}
-.login-link{
-     text-decoration: underline;
-     cursor:pointer;
 }
 
 #Layer_1{
  display: block;
  margin:auto;
- width: 30%;   
+ width: 30%;
 }
