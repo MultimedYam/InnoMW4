@@ -4,9 +4,7 @@ myApp.service('registerService', function ($q) {
 
                 var deferred = $q.defer();
                 var promise = deferred.promise;
-                console.log("username: " + username);
-                console.log("password: " + password);
-                // const UNDEFINED = 'undefined';
+
                 //Sending the register information to the server
                 //TODO: HASH the password
                 if(undefined == username || undefined == password){

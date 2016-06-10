@@ -3,9 +3,10 @@ myApp.controller('registerCtrl', function ($scope, registerService, $ionicPopup,
     $scope.user = {};
 
     // var websocket = new WebSocket("ws://145.93.144.134:8080/Server_MESH/server");
+   var socket = new WebSocket(websocket);
     $scope.register = function () {
         registerService.registerUser(
-            websocket,
+            socket,
             $scope.user.username,
             $scope.user.password,
             $scope.user.firstname,
