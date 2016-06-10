@@ -1,10 +1,9 @@
-myApp.controller('registerCtrl', function ($scope, registerService, $ionicPopup, $state) {
+myApp.controller('registerCtrl', function ($scope, registerService, $ionicPopup, $state,websocket) {
     $scope.data = {};
     $scope.user = {};
 
-    var websocket = new WebSocket("ws://145.93.144.250:8080/MeshServer/serverConnection");
+    // var websocket = new WebSocket("ws://145.93.144.134:8080/Server_MESH/server");
     $scope.register = function () {
-        console.log($scope);
         registerService.registerUser(
             websocket,
             $scope.user.username,

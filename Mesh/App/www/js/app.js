@@ -7,9 +7,11 @@
 // 'starter.controllers' is found in controllers.js
 
 var myApp = angular.module('starter', ['ionic','app.routes','ionic-material'])
+    myApp.constant('websocket', new WebSocket("ws://145.93.144.134:8080/Server_MESH/server"))
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
+            
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
             if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {

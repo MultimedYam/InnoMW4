@@ -6,19 +6,24 @@ myApp.service('registerService', function ($q) {
                 var promise = deferred.promise;
                 console.log("username: " + username);
                 console.log("password: " + password);
+                // const UNDEFINED = 'undefined';
                 //Sending the register information to the server
                 //TODO: HASH the password
-                socket.send('{"request":"register","user":[{"username":' + username + ',"password":"' + password + '","firstname":"' + firstname + '","lastname":"' + lastname + '","age":"' + age + '","sex":"' + sex + '"}]}');
-
+                if(undefined == username || undefined == password){
+                    deferred.reject('Wrong fields.');
+                }else{
+                    deferred.resolve('Registration succesfull');
+                    socket.send('{"request":"register","user":[{"username":' + username + ',"password":"' + password + '","firstname":"' + firstname + '","lastname":"' + lastname + '","age":"' + age + '","sex":"' + sex + '"}]}');
+                }
                 //event for receiving messages from the server
                 socket.onmessage = onMessage;
 
                 function onMessage(event) {
                     var data = JSON.parse(event.data);
-                    checkCredentials(data);
+                    checkValid(data);
                 }
 
-                function checkCredentials(data) {
+                function checkValid(data) {
                     if ('true' == data.Register) {
                         deferred.resolve('Welcome ' + name + '!');
                     } else {

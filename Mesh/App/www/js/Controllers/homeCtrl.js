@@ -1,6 +1,7 @@
 myApp.controller('homeCtrl', function($scope, $state, ionicMaterialInk) {
         
         ionicMaterialInk.displayEffect();
+        
       
 
         // var s = Snap("#svg");

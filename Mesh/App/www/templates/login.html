@@ -19,7 +19,7 @@
                         <div class="form-error" ng-message="maxlength">This field is must be less than characters</div>
                     </script>
                     <label class="item item-input"
-                           ng-class="{ 'has-error-lr' : registerForm.email.$invalid }">
+                           ng-class="{ 'has-error-lr' : signinForm.email.$invalid   }">
                         <span class="input-label">Email</span>
                         <input type="email"
                                name="email"
@@ -32,7 +32,7 @@
                          ng-messages-include="templates/form-errors.html">
                     </div>
                     <label class="item item-input"
-                           ng-class="{ 'has-error-lr' : registerForm.password.$invalid  }">
+                           ng-class="{ 'has-error-lr' : signinForm.password.$invalid  }">
                         <span class="input-label">Password</span>
                         <input type="password"
                                name="password"

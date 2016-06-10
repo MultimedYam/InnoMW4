@@ -1,30 +1,4 @@
-myApp.service('loginService', function ($q) {
-        return {
-            loginUser: function (name, pw) {
-                var deferred = $q.defer();
-                var promise = deferred.promise;
-
-                if (name == 'user' && pw == 'secret') {
-                    deferred.resolve('Welcome ' + name + '!');
-                } else {
-                    deferred.reject('Wrong credentials.');
-                }
-                promise.success = function (fn) {
-                    promise.then(fn);
-                    return promise;
-                }
-                promise.error = function (fn) {
-                    promise.then(null, fn);
-                    return promise;
-                }
-                return promise;
-            },
-
-            logoutUser: function(){
-                return true;
-
-            }
-
-        }
+myApp.service('socketService', function ($q) {
+    var websocket = new WebSocket("ws://145.93.144.134:8080/Server_MESH/server");
     })
 ;
