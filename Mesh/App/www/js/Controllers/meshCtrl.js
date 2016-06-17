@@ -1,7 +1,9 @@
 
-myApp.controller('meshCtrl', function ($scope, $timeout, $ionicSideMenuDelegate, ionicMaterialMotion, ionicMaterialInk) {
+myApp.controller('meshCtrl', function ($scope, $timeout, $ionicSideMenuDelegate, ionicMaterialMotion, ionicMaterialInk,websocket) {
 
     ionicMaterialInk.displayEffect();
+
+  
         
     $timeout(function(){
          ionicMaterialMotion.ripple();
@@ -10,4 +12,6 @@ myApp.controller('meshCtrl', function ($scope, $timeout, $ionicSideMenuDelegate,
     $scope.toggleLeft = function() {
         $ionicSideMenuDelegate.toggleLeft();
     };
+    var socket = new WebSocket(websocket);
+    
 });//controller

@@ -2,9 +2,7 @@ myApp.controller('loginCtrl', function ($scope, loginService, $ionicPopup, $stat
     ionicMaterialInk.displayEffect();
 
     $scope.user = {};
-    console.log(websocket);
     var socket = new WebSocket(websocket);
-    console.log(socket);
 
     $scope.login = function () {
         console.log($scope.user);

@@ -1,5 +1,12 @@
-myApp.controller('profileCtrl', function ($scope,$state) {
-        $scope.settings = {
+myApp.controller('profileCtrl', function ($scope,$state,$user,websocket) {
+    var socket = new WebSocket(websocket);
+    console.log($scope);
+
+    
+
+
+
+    $scope.settings = {
             enableFriends: false,
             shoarma: true
         };
