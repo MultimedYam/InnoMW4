@@ -1,15 +1,43 @@
-<ion-view view-title="Profile">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-      <ion-toggle  ng-model="settings.shoarma">
-        Is het al tijd voor bier?
-      </ion-toggle>
-      <button class="button button-block button-royal" ng-click="logout()">
-        Uitloggen
-      </button>
-    </ion-list>
-  </ion-content>
+<ion-view view-title="Mesh">
+  <ion-side-menus>
+
+  <!--HERE STARTS THE CONTENT NEXT THE SIDEMENU  -->
+  <ion-side-menu-content class="tab-profile-content-block">
+      
+  <div class="bar bar-header custom-color-header" style="position: static;">
+    <div class="buttons buttons-left header-item">
+      <span class="left-buttons">
+        <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+      </span>
+    </div>
+  </div>
+
+
+  <!--//CSS MESH LOGO WITH DYNAMIC CONTENT-->
+    
+    
+    
+  </div>
+
+</ion-side-menu-content>
+
+<!--HERE STARTS SIDEMENU-->
+    <ion-side-menu side="left">
+     <ion-list>
+      <ion-item ui-sref="tab.mesh">
+         MESHES
+       </ion-item>
+        <ion-item ui-sref="tab.friends">
+         FRIENDS
+       </ion-item>
+        <ion-item ui-sref="tab.search">
+         STATE
+       </ion-item >
+        <ion-item ui-sref="tab.profile">
+         PROFILE
+       </ion-item>
+     </ion-list>
+    </ion-side-menu>
+
+   </ion-side-menus>
 </ion-view>

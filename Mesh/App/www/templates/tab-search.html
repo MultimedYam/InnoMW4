@@ -1,24 +1,43 @@
-<ion-view view-title="Find">
-  <ion-content>
+<ion-view view-title="Mesh">
+  <ion-side-menus>
 
-     <div ng-init="numbers = [1,2,3,4,5,6,7,8,9]">
-      <input type="text" ng-model="q">
-      <div ng-repeat="number in numbers | filter:q " class="slide">
-        {{number}}
-      </div> 
-     </div>
-     
-     <button class="button button-fab button-balanced icon ion-leaf slide"  ng-model="checked" ng-init="checked=true">
+  <!--HERE STARTS THE CONTENT NEXT THE SIDEMENU  -->
+  <ion-side-menu-content class="tab-search-content-block">
       
-     </button>
-      <span ng-if="checked" class="animate-if">
-  This is removed when the checkbox is unchecked.
-</span>
+  <div class="bar bar-header custom-color-header" style="position: static;">
+    <div class="buttons buttons-left header-item">
+      <span class="left-buttons">
+        <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+      </span>
+    </div>
+  </div>
 
-<label>Click me: <input type="checkbox" ng-model="checked" ng-init="checked=true" /></label><br/>
-Show when checked:
-<span ng-if="checked" class="animate-if">
-  This is removed when the checkbox is unchecked.
-</span>
-  </ion-content>
+
+  <!--//CSS MESH LOGO WITH DYNAMIC CONTENT-->
+    
+    
+    
+  </div>
+
+</ion-side-menu-content>
+
+<!--HERE STARTS SIDEMENU-->
+    <ion-side-menu side="left">
+     <ion-list>
+     <ion-item ui-sref="tab.mesh">
+         MESHES
+       </ion-item>
+        <ion-item ui-sref="tab.friends">
+         FRIENDS
+       </ion-item>
+        <ion-item ui-sref="tab.search">
+         STATE
+       </ion-item >
+        <ion-item ui-sref="tab.profile">
+         PROFILE
+       </ion-item>
+     </ion-list>
+    </ion-side-menu>
+
+   </ion-side-menus>
 </ion-view>
