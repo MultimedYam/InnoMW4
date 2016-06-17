@@ -21,6 +21,15 @@ angular.module('app.routes', [])
                     }
                 }
             })
+            .state('tab.friends', {
+                url: '/friends',
+                views: {
+                    'tab-friends': {
+                        templateUrl: 'templates/tab-friends.html',
+                        controller: 'friendsCtrl'
+                    }
+                }
+            })
 
             .state('tab.search', {
                 url: '/search',

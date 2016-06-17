@@ -1,13 +1,8 @@
 
-myApp.controller('meshCtrl', function ($scope, $timeout, $ionicSideMenuDelegate, ionicMaterialMotion, ionicMaterialInk) {
+myApp.controller('meshCtrl', function ($scope) {
 
-    ionicMaterialInk.displayEffect();
-        
-    $timeout(function(){
-         ionicMaterialMotion.ripple();
-    },200);
-       
-    $scope.toggleLeft = function() {
-        $ionicSideMenuDelegate.toggleLeft();
-    };
+
+
+
+
 });//controller
