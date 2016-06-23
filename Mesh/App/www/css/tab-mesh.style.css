@@ -42,6 +42,7 @@
   position: absolute;
   visibility: visible;
   outline: 1px solid transparent;  /* fix for jagged edges in FF on hover transition */
+  background-color: lightblue;
 }
 
 .hexIn {
@@ -65,25 +66,29 @@
   margin: 0 auto;
 }
 
-.hex h1,
-.hex p {
-  margin: 0;
-  width: 102%;
-  left: -1%;  /* prevent line on the right where background doesn't cover image */
-  padding: 5%;
-  box-sizing: border-box;
-  background-color: rgba(0, 128, 128, 0.8);
-  font-weight: 300;
-  transition: transform .2s ease-out, opacity .3s ease-out;
+.text-center{
+ position: relative;
+  top: 43%;
 }
+/*.hex h1,*/
+/*.hex p {*/
+  /*margin: 0;*/
+  /*width: 102%;*/
+  /*left: -1%;  !* prevent line on the right where background doesn't cover image *!*/
+  /*padding: 5%;*/
+  /*box-sizing: border-box;*/
+  /*background-color: rgba(0, 128, 128, 0.8);*/
+  /*font-weight: 300;*/
+  /*transition: transform .2s ease-out, opacity .3s ease-out;*/
+/*}*/
 
-.hex h1 {
-  bottom: 50%;
-  padding-top: 50%;
-  font-size: 1.5em;
-  z-index: 1;
-  transform: translateY(-100%) translatez(-1px);
-}
+/*.hex h1 {*/
+  /*bottom: 50%;*/
+  /*padding-top: 50%;*/
+  /*font-size: 1.5em;*/
+  /*z-index: 1;*/
+  /*transform: translateY(-100%) translatez(-1px);*/
+/*}*/
 
 .hex h1:after {
   content: '';
@@ -104,9 +109,9 @@
 
 /*** HOVER EFFECT  **********************************************************************/
 
-.hexIn:hover h1, .hexIn:focus h1, .hexIn:hover p, .hexIn:focus p {
-  transform: translateY(0%) translatez(-1px);
-}
+/*.hexIn:hover h1, .hexIn:focus h1, .hexIn:hover p, .hexIn:focus p {*/
+  /*transform: translateY(0%) translatez(-1px);*/
+/*}*/
 
 
 /*** SPACING AND SIZING *****************************************************************/
