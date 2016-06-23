@@ -1,56 +1,57 @@
 myApp.controller('meshCtrl', function ($scope, $ionicSideMenuDelegate, websocket) {
-
+    var interests = [];
     var socket = new WebSocket(websocket);
-    console.log(socket); 
-
-    socket.onopen = function(){
-    socket.send('{"request":"getMyInterests"}');
-    socket.onmessage = onMessage;
-
-};
-
-    function onMessage(event) {
-        console.log("onmessage");
-
-        console.log(event);
-        var data = JSON.parse(event.data);
-        console.log(data);
-        // var JSONList = data["myInterests"];
-    }
-
-
-    // for (var prop in JSONList) {
-    //     console.log("Interest " + prop + " / Category " + JSONList[prop]);
-    // }
-
+    console.log($scope);
     //for each interest in interests
     $scope.interests = {
         hex1: {
-            category: 'balance',
-            interest: 'balance'
+            category: 'placeholder',
+            interest: 'placeholder'
         }, hex2: {
-            category: 'photography',
-            interest: 'photography'
+            category: 'placeholder',
+            interest: 'placeholder'
         }, hex3: {
-            category: 'writing',
-            interest: 'writing'
-        },  hex5: {
-            category: 'balance',
-            interest: 'balance'
+            category: 'placeholder',
+            interest: 'placeholder'
+        }, hex5: {
+            category: 'placeholder',
+            interest: 'placeholder'
         }, hex6: {
-            category: 'balance',
-            interest: 'balance'
+            category: 'placeholder',
+            interest: 'placeholder'
         }, hex7: {
-            category: 'balance',
-            interest: 'balance'
+            category: 'placeholder',
+            interest: 'placeholder'
         }
     };
+
+    socket.onopen = function () {
+        socket.send('{"request":"getMyInterests","id" :"' + 2 + '" }');
+        socket.onmessage = onMessage;
+    };
+
+
+    function onMessage(event) {
+        var data = JSON.parse(event.data);
+        interests = data["myInterests"];
+        var $i = 1;
+        for (value in interests) {
+            if ($i == 4) {
+                $i++;
+            }
+
+            $scope['interests']['hex'+$i]['category'] = value;
+            $scope['interests']['hex'+$i]['interest'] = interests[value];
+            $i = $i +1 ;
+        }
+    }
+
 
     $scope.toggleLeft = function () {
         $ionicSideMenuDelegate.toggleLeft();
     };
 
     angular.element(document).ready(function () {
-        console.log("test");
     });
-});//controller
+})
+;

@@ -19,8 +19,9 @@ myApp.service('loginService', function ($q) {
                 }
 
                 function checkCredentials(data) {
-                    if ('true' == data.Login) {
-                        deferred.resolve('Welcome ' + name + '!');
+                    if ('-1' != data.Login) {
+                        deferred.resolve(data.Login);
+                        
                     } else {
                         deferred.reject('Wrong credentials.');
                     }

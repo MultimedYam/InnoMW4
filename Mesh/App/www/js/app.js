@@ -7,7 +7,8 @@
 // 'starter.controllers' is found in controllers.js
 
 var myApp = angular.module('starter', ['ionic','app.routes','ionic-material','ngAnimate'])
-    myApp.constant('websocket', "ws://145.93.144.134:8080/Server_MESH/server")
+    myApp.constant('websocket', "ws://145.93.144.252:8080/Server_MESH/server");
+
 
     myApp.run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {

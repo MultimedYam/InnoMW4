@@ -2,20 +2,19 @@ myApp.controller('loginCtrl', function ($scope, loginService, $ionicPopup, $stat
     ionicMaterialInk.displayEffect();
 
     $scope.user = {};
-    console.log(websocket);
     var socket = new WebSocket(websocket);
-    console.log(socket);
 
     $scope.login = function () {
-        console.log($scope.user);
-        // loginService.loginUser($scope.user.username, $scope.user.password, socket).success(function (data) {
+        loginService.loginUser($scope.user.username, $scope.user.password, socket).success(function (data) {
+            $scope.user.id = data;
+            user = $scope.user;
             $state.go('tab.mesh');
-        // }).error(function (data) {
-        //     var alertPopup = $ionicPopup.alert({
-        //         title: 'Login failed!',
-        //         template: 'Please check your credentials!'
-        //     });
-        // });
+        }).error(function (data) {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Login failed!',
+                template: 'Please check your credentials!'
+            });
+        });
     };
 
     $scope.logout = function () {
